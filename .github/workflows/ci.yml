@@ -79,11 +79,11 @@ jobs:
         if: startsWith(matrix.os, 'macos')
 
       - name: Compile for ios
-        run: cargo build --all-targets --all-features --target aarch64-apple-ios
+        run: cargo build --all-features --target aarch64-apple-ios
         if: startsWith(matrix.os, 'macos')
 
       - name: Compile for ios simulator
-        run: cargo build --all-targets --all-features --target aarch64-apple-ios-sim
+        run: cargo build --all-features --target aarch64-apple-ios-sim
         if: startsWith(matrix.os, 'macos')
 
       - name: Fuzzer
