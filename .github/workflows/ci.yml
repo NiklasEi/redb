@@ -71,6 +71,10 @@ jobs:
         if: steps.rust-cache.outputs.cache-hit != 'true'
         run: cargo install --force --version 1.8.0 just --locked
 
+      - name: Install ios targets
+        run: rustup target add aarch64-apple-ios aarch64-apple-ios-sim
+        if: startsWith(matrix.os, 'macos')
+
       - name: Compile
         run: cargo build --all-targets --all-features
 
