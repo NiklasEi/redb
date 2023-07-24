@@ -7,7 +7,7 @@ use std::fs::File;
 use std::io;
 use std::mem;
 use std::ops::{Index, IndexMut};
-#[cfg(any(target_os = "linux", all(unix, not(fuzzing))))]
+#[cfg(any(target_os = "linux", all(target_os = "macos", not(fuzzing))))]
 use std::os::unix::io::AsRawFd;
 use std::slice::SliceIndex;
 #[cfg(any(fuzzing, test, feature = "cache_metrics"))]
